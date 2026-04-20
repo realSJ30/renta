@@ -25,22 +25,17 @@ const Button: React.FC<IButton> = ({
       disabled={disabled}
       className={`
             relative
-            disabled:opacity-70
+            disabled:opacity-60
             disabled:cursor-not-allowed
-            rounded-lg
-            hover:opacity-80
+            rounded-xl
             transition
             w-full
-            ${outline ? "bg-white" : "bg-gray-500"}
-            ${outline ? "border-black" : "border-gray-500"}
-            ${outline ? "text-black" : "text-white"}
-            ${small ? "py-1" : "py-3"}
-            ${small ? "text-sm" : "text-md"}
-            ${small ? "font-light" : "font-semibold"}
-            ${small ? "border" : "border-2"}
+            border
+            ${outline ? "bg-white hover:bg-slate-50 border-slate-300 text-slate-800" : "bg-indigo-600 hover:bg-indigo-700 border-indigo-600 text-white shadow-sm"}
+            ${small ? "py-1.5 text-sm font-medium" : "py-3 text-base font-semibold"}
         `}
     >
-      {Icon && <Icon size={24} className="absolute left-4 top-3 " />}
+      {Icon && <Icon size={20} className="absolute left-4 top-1/2 -translate-y-1/2" />}
       {label}
     </button>
   );

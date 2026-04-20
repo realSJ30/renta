@@ -9,15 +9,12 @@ const Logo = () => {
   return (
     <div
       onClick={() => router.push("/")}
-      className="flex items-center justify-center gap-2 cursor-pointer group"
+      className="flex items-center gap-2 cursor-pointer group select-none"
     >
-      <MdBedroomParent
-        color="black"
-        size={38}
-        className="hidden md:block"
-        onClick={() => router.push("/")}
-      />
-      <h1 className="text-black font-bold text-2xl hidden md:block text-opacity-80 group-hover:text-opacity-100 transition">
+      <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-indigo-700 flex items-center justify-center shadow-sm">
+        <MdBedroomParent color="white" size={22} />
+      </div>
+      <h1 className="text-slate-900 font-bold text-xl tracking-tight hidden sm:block group-hover:text-indigo-700 transition">
         renta
       </h1>
     </div>

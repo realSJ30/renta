@@ -20,9 +20,9 @@ const EmptyState: React.FC<EmptyStateProps> = ({
   const router = useRouter();
 
   return (
-    <div className="h-[60vh] flex flex-col gap-2 justify-center items-center">
+    <div className="min-h-[50vh] flex flex-col gap-3 justify-center items-center rounded-2xl border border-dashed border-slate-200 bg-white py-16 px-6">
       <Heading center title={title} subtitle={subtitle} />
-      <div className="w-48 mt-4">
+      <div className="w-56 mt-4">
         {showReset && (
           <Button
             outline

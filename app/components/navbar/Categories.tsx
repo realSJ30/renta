@@ -108,20 +108,22 @@ const Categories = () => {
   }
 
   return (
-    <Container>
-      <div className="pt-4 flex flex-row items-center justify-between overflow-x-auto">
-        {categories.map((categoryItem: ICategoryBox, index: number) => {
-          return (
-            <CategoryBox
-              key={index}
-              label={categoryItem.label}
-              selected={category === categoryItem.label}
-              icon={categoryItem.icon}
-            />
-          );
-        })}
-      </div>
-    </Container>
+    <div className="border-t border-slate-200/70">
+      <Container>
+        <div className="flex flex-row items-center gap-2 md:gap-6 overflow-x-auto no-scrollbar py-2">
+          {categories.map((categoryItem: ICategoryBox, index: number) => {
+            return (
+              <CategoryBox
+                key={index}
+                label={categoryItem.label}
+                selected={category === categoryItem.label}
+                icon={categoryItem.icon}
+              />
+            );
+          })}
+        </div>
+      </Container>
+    </div>
   );
 };
 

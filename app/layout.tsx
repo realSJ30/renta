@@ -6,6 +6,7 @@ import RegisterModal from "./components/modals/RegisterModal";
 import RentModal from "./components/modals/RentModal";
 import SearchModal from "./components/modals/SearchModal";
 import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/Footer";
 import "./globals.css";
 import ToasterProvider from "./providers/ToasterProvider";
 
@@ -34,7 +35,8 @@ export default async function RootLayout({
         <RentModal />
         <SearchModal />
         <Navbar currentUser={currentUser} />
-        <div className="pb-20 pt-28">{children}</div>
+        <main className="pt-32 md:pt-36 pb-10">{children}</main>
+        <Footer />
       </body>
     </html>
   );

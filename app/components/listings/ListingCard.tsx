@@ -66,27 +66,38 @@ const ListingCard: React.FC<ListingCardProps> = ({
       className="col-span-1 cursor-pointer group"
       onClick={() => router.push(`/listings/${data.id}`)}
     >
-      <div className="flex flex-col gap-2 w-full">
-        <div className="aspect-square w-full relative overflow-hidden rounded-xl">
+      <div className="flex flex-col gap-3 w-full">
+        <div className="aspect-[4/3] w-full relative overflow-hidden rounded-2xl bg-slate-100">
           <Image
             fill
             alt="Listing"
             src={data.imageSrc}
-            className="object-cover h-full w-full group-hover:scale-110 transition"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover h-full w-full group-hover:scale-105 transition duration-500"
           />
           <div className="absolute top-3 right-3">
             <HeartButton listingId={data.id} currentUser={currentUser} />
           </div>
+          <div className="absolute bottom-3 left-3 px-2.5 py-1 rounded-full bg-white/90 backdrop-blur-sm text-[11px] font-semibold text-slate-800 shadow-sm">
+            {data.category}
+          </div>
         </div>
-        <div className="font-semibold text-lg">
-          {location?.region}, {location?.label}
+        <div className="flex items-start justify-between gap-2">
+          <div className="font-semibold text-base text-slate-900 truncate">
+            {location?.label}
+          </div>
+          <div className="text-xs text-slate-500 shrink-0">
+            {location?.region}
+          </div>
         </div>
-        <div className="font-light text-neutral-500">
-          {reservationDate || data.category}
+        <div className="text-sm text-slate-500 -mt-1 truncate">
+          {reservationDate || `Stay in ${location?.label ?? "this place"}`}
         </div>
-        <div className="flex flex-row items-center gap-1">
-          <div className="font-semibold">$ {price}</div>
-          {!reservation && <div className="font-light">night</div>}
+        <div className="flex flex-row items-baseline gap-1">
+          <div className="font-semibold text-slate-900">${price}</div>
+          {!reservation && (
+            <div className="text-sm text-slate-500">/ night</div>
+          )}
         </div>
         {onAction && actionLabel && (
           <Button

@@ -13,12 +13,14 @@ interface INavbar {
 
 const Navbar: React.FC<INavbar> = ({ currentUser }) => {
   return (
-    <div className="fixed w-full bg-white z-10 shadow-sm">
-      <div className="py-4 border-b">
+    <div className="fixed w-full bg-white/85 backdrop-blur-md z-10 border-b border-slate-200/70">
+      <div className="py-3 md:py-4">
         <Container>
-          <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
+          <div className="flex flex-row items-center justify-between gap-3 md:gap-6">
             <Logo />
-            <Search />
+            <div className="flex-1 max-w-xl">
+              <Search />
+            </div>
             <UserMenu currentUser={currentUser} />
           </div>
         </Container>
