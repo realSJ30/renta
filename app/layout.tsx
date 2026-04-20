@@ -35,7 +35,7 @@ export default async function RootLayout({
         <RentModal />
         <SearchModal />
         <Navbar currentUser={currentUser} />
-        <main className="pt-32 md:pt-36 pb-10">{children}</main>
+        <main className="pt-40 md:pt-44 pb-10">{children}</main>
         <Footer />
       </body>
     </html>
